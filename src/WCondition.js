@@ -1,5 +1,6 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
+import WeatherIcon from "./WeatherIcon";
 
 export default function WCondition(props) {
     return (
@@ -15,16 +16,22 @@ export default function WCondition(props) {
                 </ul>
                 <div className="row">
                     <div className="col-6">
-                        <img src={props.info.icon} alt={props.info.description} />
-                        <h2>
-                            <span className="temperature">
-                                {props.info.temperature}
-                                </span>
-                                <span className="unit">
+                         <div className="clearfix">
+                             <div className="float-left">
+                                <WeatherIcon code={props.info.icon} alt={props.info.description} />
+                             </div>
+                         <div className="float-left">
+                                 <h2>
+                                     <span className="temperature">
+                                      {props.info.temperature}
+                                    </span>
+                                     <span className="unit">
                                     °C
                                     </span>
-                        </h2>
+                                 </h2>
+                        </div>
                     </div>
+                </div>
                     <div className="col-6">
                         <ul>
                             <li>

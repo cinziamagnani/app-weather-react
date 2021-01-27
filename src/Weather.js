@@ -17,7 +17,8 @@ export default function Weather(props) {
             humidity: Math.round(response.data.main.humidity),
             feelsLike: Math.round(response.data.main.feels_like), 
             description: response.data.weather[0].description,
-            icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+            icon: response.data.weather[0].icon,
+            iconUrl: `http://openweathermap.org/img/wn/${weather.icon}@2x.png`
         })
     }
 
