@@ -1,6 +1,7 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
 import WeatherIcon from "./WeatherIcon";
+import Temperature from "./Temperature";
 
 export default function WCondition(props) {
     return (
@@ -21,14 +22,7 @@ export default function WCondition(props) {
                                 <WeatherIcon code={props.info.icon} alt={props.info.description} />
                              </div>
                          <div className="float-left">
-                                 <h2>
-                                     <span className="temperature">
-                                      {props.info.temperature}
-                                    </span>
-                                     <span className="unit">
-                                    °C
-                                    </span>
-                                 </h2>
+                             <Temperature celsius={props.info.temperature} />
                         </div>
                     </div>
                 </div>
