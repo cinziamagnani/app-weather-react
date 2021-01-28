@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Weather.css"
 import axios from "axios";
 import WCondition from "./WCondition";
+import WForecast from "./WForecast";
 
 export default function Weather(props) { 
     const [weather, setWeather] = useState({ready: false});
@@ -49,6 +50,7 @@ export default function Weather(props) {
                     </div>
                 </form>
                 <WCondition info={weather}/>
+                <WForecast city={weather.city}/>
             </div>
         )
     } else {

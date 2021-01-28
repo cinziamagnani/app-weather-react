@@ -1,0 +1,20 @@
+.WForecast .singleF {
+    padding: 5px;
+    text-align: center;
+}
+
+.WForecast canvas {
+    display: block;
+    margin: 5px auto;
+    position: relative;
+    right: 25px;
+}
+.WForecast h3 {
+    font-size: 20px;
+    padding-top: 10px;
+}
+
+.WForecast p {
+    margin: 0 auto;
+    font-size: 16px;
+}

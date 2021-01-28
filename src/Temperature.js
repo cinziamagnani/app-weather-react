@@ -1,24 +1,21 @@
 import React, { useState } from "react";
 
 export default function Temperature(props) {
-    const [temp, setTemp] = useState(props.celsius);
     const [unit, setUnit] = useState('celsius');
     function convertToFahrenheit(event) {
         event.preventDefault();
-        setTemp(Math.round((props.celsius*9)/5 + 32));
         setUnit('fahrenheit');
     }
     function convertToCelsius(event) {
         event.preventDefault();
         setUnit('celsius');
-        setTemp(props.celsius);
     }
     if (unit==='celsius') {
         return (
             <div className="Temperature">
             <h2>
                                                  <span className="temperature">
-                                                  {temp}
+                                                  {props.celsius}
                                                 </span>
                                                 <span className="unit">
                                                 °C |
@@ -30,11 +27,12 @@ export default function Temperature(props) {
             </div>
                 );
     } else {
+        let fahrenheit = Math.round((props.celsius*9)/5 + 32);
         return (
             <div className="Temperature">
             <h2>
                                                  <span className="temperature">
-                                                  {temp}
+                                                  {fahrenheit}
                                                 </span>
                                                 <span className="unit">
                                                 <a href='/' className='links' onClick={convertToCelsius}>
